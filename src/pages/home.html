@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Load common css file -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Load font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+    <title>To do list</title>
+</head>
+<body>
+    <header class="card header">
+        <div class="header__content">
+            <nav class="header__navigation">
+                <li class="header__navigation_li">
+                    <a href="/" class="header__navigation_link">
+                        <h2>
+                            List
+                        </h2>
+                    </a>
+                </li>
+                <li class="header__navigation_li">
+                    <a href="/history" class="header__navigation_link">
+                        <h2>
+                            History
+                        </h2>
+                    </a>
+                </li>
+            </nav>  
+    
+            <button
+                class="button header__add-task_button button_primary"
+                id="header__add-task-button"
+                onclick="toggleModal"
+            >
+                Add task
+            </button>
+        </div>
+    </header>
+    
+    <main class="main tasks" id="tasks">
+        
+    </main>
+
+    <div
+        class="modal__overlay"
+        id="modal__overlay"
+        style="display: none;"
+    >
+        <div class="modal__container card" id="modal__content">
+            <button class="modal__close" id="modal__close">
+                &#x2715;
+            </button>
+
+            <h3 class="modal__title">
+                Create task
+            </h3>
+            <form class="modal__form" id="modal__form">
+                <label
+                    for="form-title"
+                    class="modal__label"
+                >
+                    Title
+                </label>
+                <input
+                    id="form-title"
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    class="modal__input"
+                />
+                <label
+                    for="form-description"
+                    class="modal__label"
+                >
+                    Description
+                </label>
+                <textarea
+                    id="form-description"
+                    name="description"
+                    placeholder="Description"
+                    class="modal__input"
+                    rows="6"
+                    cols="45"
+                ></textarea>
+
+                <div class="modal__controls">
+                    <button class="button" id="modal__cancel">
+                        cancel
+                    </button>
+                    <button class="button button_primary" type="submit">
+                        create
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./home.js"></script>
+     
+</body>
+</html>
